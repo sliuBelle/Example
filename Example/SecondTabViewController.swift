@@ -37,7 +37,7 @@ class SecondTabViewController: UIViewController {
     //----------使用UIImageView制作帧动画
     func frameAnimotion(){
         //初始化一个数组用来存放素材
-        var images = [UIImage]()
+        var images = [UIImage]();
         //创建一个循环，导入图片
         for i in 1...12 {
             images.append(UIImage(named: "\(i)")!)
@@ -234,7 +234,7 @@ class SecondTabViewController: UIViewController {
     
     //----------使用图形上下文按一定比例缩放图片-------------
     func imageScaleApply() {
-        let image = UIImage(named: "3")
+        let image = UIImage(named: "23")
         let scaleImage = self.scaleImage(image: (image)!, newSize: CGSize(width: 160, height: 240))
         let imageView = UIImageView(image: scaleImage)
         imageView.center = CGPoint(x: 160, y: 240)

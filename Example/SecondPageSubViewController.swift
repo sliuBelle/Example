@@ -20,7 +20,7 @@ class SecondPageSubViewController: UIViewController {
         
         //        let pcHeight: CGFloat = 50.0
         
-        let image = UIImage(named:"3")
+        let image = UIImage(named:"23")
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         

@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     //添加image方法
     fileprivate func addImage() {
         // Do any additional setup after loading the view, typically from a nib.
-        let image = UIImage(named: "1")
+        let image = UIImage(named: "21")
         let imgView = UIImageView(image: image)
         self.view.addSubview(imgView)
     }
@@ -176,7 +176,7 @@ class ViewController: UIViewController {
     
     //给图像视图添加边框效果、圆角效果、阴影效果
     func ViewDisplayEffect(){
-        let image = UIImage(named:"5")
+        let image = UIImage(named:"25")
         let imageView = UIImageView(image: image)
         
         //---------设置视图显示区域---------------
@@ -229,7 +229,7 @@ class ViewController: UIViewController {
     
     //利用图片视图纹理
     func viewPattern() {
-        let image = UIImage(named:"7")
+        let image = UIImage(named:"27")
         //用图片作为纹理颜色初始化
         let patternColor = UIColor.init(patternImage: image!)
         //设置视图的背景颜色
@@ -255,7 +255,7 @@ class ViewController: UIViewController {
         let rect = CGRect(x: 30, y:80, width: 256, height:256)
         let imageView = UIImageView(frame: rect)
         
-        let image = UIImage(named: "7")
+        let image = UIImage(named: "27")
         imageView.image = image
         
         //开启图像视图的交互功能

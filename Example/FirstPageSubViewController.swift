@@ -20,7 +20,7 @@ class FirstPageSubViewController: UIViewController {
         
         //        let pcHeight: CGFloat = 50.0
         
-        let image = UIImage(named:"2")
+        let image = UIImage(named:"22")
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         
