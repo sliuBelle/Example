@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		657A611F201069F6001E5E4B /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657A611E201069F5001E5E4B /* music.mp3 */; };
+		657A612120106C1C001E5E4B /* welcome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657A612020106C1C001E5E4B /* welcome.mp3 */; };
+		657A612320106E72001E5E4B /* tap1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657A612220106E72001E5E4B /* tap1.mp3 */; };
+		657A612620109901001E5E4B /* movie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 657A612520107B8E001E5E4B /* movie.mp4 */; };
+		657A61282010A012001E5E4B /* ThirdTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A61272010A012001E5E4B /* ThirdTabViewController.swift */; };
 		65B4BC29200F44DC002AAC95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4BC28200F44DC002AAC95 /* AppDelegate.swift */; };
 		65B4BC2B200F44DC002AAC95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4BC2A200F44DC002AAC95 /* ViewController.swift */; };
 		65B4BC2E200F44DC002AAC95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B4BC2C200F44DC002AAC95 /* Main.storyboard */; };
@@ -42,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		657A611E201069F5001E5E4B /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		657A612020106C1C001E5E4B /* welcome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = welcome.mp3; sourceTree = "<group>"; };
+		657A612220106E72001E5E4B /* tap1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap1.mp3; sourceTree = "<group>"; };
+		657A612520107B8E001E5E4B /* movie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = movie.mp4; sourceTree = "<group>"; };
+		657A61272010A012001E5E4B /* ThirdTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTabViewController.swift; sourceTree = "<group>"; };
 		65B4BC25200F44DC002AAC95 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B4BC28200F44DC002AAC95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B4BC2A200F44DC002AAC95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +123,10 @@
 		65B4BC27200F44DC002AAC95 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				657A612520107B8E001E5E4B /* movie.mp4 */,
+				657A612220106E72001E5E4B /* tap1.mp3 */,
+				657A611E201069F5001E5E4B /* music.mp3 */,
+				657A612020106C1C001E5E4B /* welcome.mp3 */,
 				65B4BC28200F44DC002AAC95 /* AppDelegate.swift */,
 				65B4BC2A200F44DC002AAC95 /* ViewController.swift */,
 				65B4BC2C200F44DC002AAC95 /* Main.storyboard */,
@@ -124,6 +138,7 @@
 				65B4BC5A200F4584002AAC95 /* SecondPageSubViewController.swift */,
 				65B4BC5C200F45AE002AAC95 /* FirstTabViewController.swift */,
 				65B4BC5E200F45D0002AAC95 /* SecondTabViewController.swift */,
+				657A61272010A012001E5E4B /* ThirdTabViewController.swift */,
 				65B4BC60200F4600002AAC95 /* NavigationFirstViewController.swift */,
 				65B4BC62200F4633002AAC95 /* NavigationSecondViewController.swift */,
 				65B4BC64200F4672002AAC95 /* MyLable.swift */,
@@ -256,6 +271,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657A612620109901001E5E4B /* movie.mp4 in Resources */,
+				657A611F201069F6001E5E4B /* music.mp3 in Resources */,
+				657A612120106C1C001E5E4B /* welcome.mp3 in Resources */,
+				657A612320106E72001E5E4B /* tap1.mp3 in Resources */,
 				65B4BC33200F44DC002AAC95 /* LaunchScreen.storyboard in Resources */,
 				65B4BC30200F44DC002AAC95 /* Assets.xcassets in Resources */,
 				65B4BC2E200F44DC002AAC95 /* Main.storyboard in Resources */,
@@ -284,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B4BC57200F4537002AAC95 /* PageControlViewController.swift in Sources */,
+				657A61282010A012001E5E4B /* ThirdTabViewController.swift in Sources */,
 				65B4BC2B200F44DC002AAC95 /* ViewController.swift in Sources */,
 				65B4BC5B200F4584002AAC95 /* SecondPageSubViewController.swift in Sources */,
 				65B4BC5F200F45D0002AAC95 /* SecondTabViewController.swift in Sources */,

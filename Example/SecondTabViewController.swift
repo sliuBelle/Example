@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import AudioToolbox
+import AVFoundation
+//首先引入需要使用的流媒体基础框架，它能收集各种多媒体数据，这些数据可以来自不同的输入设备，比如摄像机、录音机等。
 
 class SecondTabViewController: UIViewController {
-
+    //初始化音频播放对象，并将音频播放对象，作为视图控制器类的属性。
+    var audioPlayer:AVAudioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +28,12 @@ class SecondTabViewController: UIViewController {
         //        uiblurEffect()
         //        caTransactionReveal()
         //        caTransactionPush()
-        //        imagePlayAnimation()
-        frameAnimotion()
-        
+//                imagePlayAnimation()
+//        frameAnimotion()
+//        systemSound()
+//        audio()
+//        backgroundPlayer()
+        mvPlayer2()
         
     }
     
@@ -34,6 +42,125 @@ class SecondTabViewController: UIViewController {
         self.tabBarItem.image = UIImage(named: "p_run_icon_on")
         self.view.backgroundColor = UIColor.purple
     }
+    
+    func mvPlayer(){
+        //定义一个视频文件路径
+        let filePath = Bundle.main.path(forResource: "movie", ofType: "mp4")
+        //将字符串路径，转换为网址路径。
+        let videoURL = URL(fileURLWithPath: filePath!)
+        //定义一个视频播放器，通过本地文件路径初始化
+        let player = AVPlayer(url: videoURL)
+        //设置大小和位置（全屏）
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds
+        self.view.layer.addSublayer(playerLayer)
+        player.play()
+    }
+    
+    func mvPlayer2(){
+        //定义一个视频文件路径
+        let filePath = Bundle.main.path(forResource: "movie", ofType: "mp4")
+        //将字符串路径，转换为网址路径。
+        let videoURL = URL(fileURLWithPath: filePath!)
+        
+        //定义一个playerItem，并监听相关的通知
+        let playerItem = AVPlayerItem(url: videoURL)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+        
+        //定义一个视频播放器，通过本地文件路径初始化
+        let player = AVPlayer(playerItem: playerItem)
+        //设置大小和位置（全屏）
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds
+        self.view.layer.addSublayer(playerLayer)
+        player.play()
+    }
+    
+    @objc func playerDidFinishPlaying(){
+        print("播放完毕")
+    }
+    
+    
+    
+    //info.plist中设置键Required background modes item0--App plays audio or streams audio/video using AirPlay
+    func backgroundPlayer() {
+        //设初始化音频播放对象，并将音频播放对象，作为视图控制器类的属性。
+        //获得音频会话对象，该对象属于单例模式，也就是说不用开发者而自行实例化。这个类在各种音频环境中，起着非常重要的作用。
+        let session = AVAudioSession.sharedInstance()
+        do {
+            //启动音频会话管理，此时会阻断后台音乐的播放。
+            try session.setActive(true)
+            //设置音频操作类别，表示该应用仅支持音频的播放。
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+            //设置应用程序支持接受远程控制事件。
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+            //定义一个字符串常量，描述声音文件的路径。
+            let path = Bundle.main.path(forResource: "music", ofType: "mp3")
+            //将字符串路径，转换为网址路径。
+            let soundUrl = URL(fileURLWithPath: path!)
+            //对音频播放对象，进行初始化，并加载指定的音频文件。
+            try audioPlayer = AVAudioPlayer(contentsOf: soundUrl)
+            audioPlayer.prepareToPlay()
+            audioPlayer.volume = 1.0
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.play()
+        }catch {
+            print(error)
+        }
+    }
+    
+    //audio
+    func audio(){
+        //设初始化音频播放对象，并将音频播放对象，作为视图控制器类的属性。
+        //获取沙箱目录中，音频文件的所在路径。
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")
+        //将字符串路径，转换为网址路径。
+        let soundUrl = URL(fileURLWithPath: path!)
+        do {
+            //在音频播放前，首先创建一个异常捕捉语句。对音频播放对象，进行初始化，并加载指定的音频文件。
+            try audioPlayer = AVAudioPlayer(contentsOf: soundUrl)
+            //设置音频播放对象的音量大小。
+            audioPlayer.volume = 1.0
+            //设置音频播放的次数，-1为无限循环播放。
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.play()
+        } catch {
+            print(error)
+        }
+    }
+    
+    //系统声音，小于30s
+    func systemSound(){
+//        //1.声音播放
+//        //建立的SystemSoundID对象
+//        var soundID:SystemSoundID = 0
+//        //获取声音地址
+//        let path = Bundle.main.path(forResource: "tap1", ofType: "mp3")
+//        //地址转换
+//        let baseURL = NSURL(fileURLWithPath: path!)
+//        //赋值
+//        AudioServicesCreateSystemSoundID(baseURL, &soundID)
+//        //播放声音
+//        AudioServicesPlaySystemSound(soundID)
+        
+        //2. 提醒(声音+震动)
+        //建立的SystemSoundID对象
+        var soundID:SystemSoundID = 0
+        //获取声音地址:获取沙箱目录中，音频文件的所在路径。
+        let path = Bundle.main.path(forResource: "tap1", ofType: "mp3")
+        //地址转换
+        let baseURL = NSURL(fileURLWithPath: path!)
+        //赋值
+        AudioServicesCreateSystemSoundID(baseURL, &soundID)
+        //提醒（同上面唯一的一个区别）
+        AudioServicesPlayAlertSound(soundID)
+        
+//        //3.振动
+//        let soundID = SystemSoundID(kSystemSoundID_Vibrate)
+//        AudioServicesPlaySystemSound(soundID)
+
+    }
+    
     //----------使用UIImageView制作帧动画
     func frameAnimotion(){
         //初始化一个数组用来存放素材
@@ -47,7 +174,7 @@ class SecondTabViewController: UIViewController {
         imageView.animationImages = images
         imageView.animationDuration = 5
         //设置动画循环次数，0为无限次循环
-        imageView.animationRepeatCount = 0
+        imageView.animationRepeatCount = 1
         //开始帧动画播放
         imageView.startAnimating()
         

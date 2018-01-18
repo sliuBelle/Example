@@ -27,9 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabViewController = UITabBarController()
         let viewController1 = FirstTabViewController()
         let viewController2 = SecondTabViewController()
+        let viewController3 = ThirdTabViewController()
         
         //将两个视图控制器，以数组的方式，指定给选项卡控制器对象
-        tabViewController.viewControllers = [viewController2, viewController1]
+        tabViewController.viewControllers = [viewController3,viewController2, viewController1]
         tabViewController.view.backgroundColor = UIColor.clear
         self.window?.rootViewController = tabViewController
         
