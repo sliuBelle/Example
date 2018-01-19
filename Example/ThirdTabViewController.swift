@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ThirdTabViewController: UIViewController {
 
@@ -28,12 +29,103 @@ class ThirdTabViewController: UIViewController {
 //        isFirstStart()
 //        readPlist()
 //        createPlist()
-        userMode()
-        
+//        userMode()
+//        coredata()
         // Do any additional setup after loading the view.
     }
     //CoreData实体：插入数据、查找、编辑、删除
+    @available(iOS 10.0, *)
     func coredata(){
+        //获得当前程序的应用代理。
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        //通过应用代理对象，获得管理对象上下文。
+        let manageObjectContext = appDelegate.persistentContainer.viewContext
+        
+//        //------------------------------插入----------------------------------
+//        //通过管理对象上下文，插入一条实体数据。
+//        let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: manageObjectContext) as! User
+//         newUser.userName = "John"
+//        newUser.password = "123456"
+//        //添加一条异常捕捉语句，用于执行数据的插入操作。
+//        do
+//        {
+//            try manageObjectContext.save()
+//            print("Success to save data.")
+//        }
+//        catch
+//        {
+//            print("Failed to save data")
+//        }
+//        
+        //通过管理对象上下文，根据实体的名称，获得实体对象。
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: manageObjectContext)
+        //然后创建一个数据提取请求对象。
+        let request = NSFetchRequest<User>(entityName: "User")
+        //接着设置提取数据的偏移值。
+        request.fetchOffset = 0
+        //设置提取数据的数量。
+        request.fetchLimit = 10
+        //继续设置需要提取数据的实体对象。
+        request.entity = entity
+        
+        //然后创建一个谓词对象，设置提取数据的查询条件。谓词被用来指定数据被获取、或者过滤的方式。
+        let predicate = NSPredicate.init(format: "userName= 'John'", "")
+        //设置数据提取请求对象的谓词属性。
+        request.predicate = predicate
+        
+        //------------------------------删除-----------------------------------
+        do
+        {
+            let results:[AnyObject] = try manageObjectContext.fetch(request)
+            for user:User in results as! [User]
+            {
+                manageObjectContext.delete(user)
+            }
+            try manageObjectContext.save()
+
+            let results2:[AnyObject]? = try manageObjectContext.fetch(request)
+            for user:User in results2 as! [User] {
+                print("userName=\(user.userName)")
+                print("password=\(user.password)")
+            }
+        }
+        catch
+        {
+            print("Failed to modify data")
+        }
+
+        
+        
+        
+        //------------------------------查询-------------------------------------
+        //添加一条异常捕捉语句，用于执行数据的查询操作。
+        do{
+            //使用try语句，执行管理对象上下文的数据提取操作，并把提取的结果，存储在一个数组中。
+            let results:[AnyObject]? = try manageObjectContext.fetch(request)
+            for user:User in results as! [User]
+            {
+                print("userName=\(user.userName)")
+                print("password=\(user.password)")
+            }
+        }
+        catch
+        {
+            print("Failed to fetch data.")
+        }
+//        //------------------------------修改名字--------------------------------------
+//        do
+//        {
+//            let requests:[AnyObject]? = try manageObjectContext.fetch(request)
+//            for user:User in requests as! [User] {
+//                user.userName = "Peter"
+//            }
+//            try manageObjectContext.save()
+//            let results2:[AnyObject]? = try manageObjectContext.fetch(request)
+//        }
+//        catch
+//        {
+//            print("Failed to modify data")
+//        }
         
     }
     

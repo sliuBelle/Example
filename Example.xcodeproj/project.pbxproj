@@ -14,6 +14,10 @@
 		657A61282010A012001E5E4B /* ThirdTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A61272010A012001E5E4B /* ThirdTabViewController.swift */; };
 		657A612A20119F8F001E5E4B /* demoPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 657A612920119F8F001E5E4B /* demoPlist.plist */; };
 		657A612C2011C2FE001E5E4B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A612B2011C2FE001E5E4B /* UserModel.swift */; };
+		657A612F2011C9C7001E5E4B /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 657A612D2011C9C7001E5E4B /* Example.xcdatamodeld */; };
+		657A616F2011CEF1001E5E4B /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A616D2011CEF1001E5E4B /* User+CoreDataClass.swift */; };
+		657A61702011CEF1001E5E4B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A616E2011CEF1001E5E4B /* User+CoreDataProperties.swift */; };
+		657A61722011D9C8001E5E4B /* SingletonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A61712011D9C8001E5E4B /* SingletonClass.swift */; };
 		65B4BC29200F44DC002AAC95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4BC28200F44DC002AAC95 /* AppDelegate.swift */; };
 		65B4BC2B200F44DC002AAC95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4BC2A200F44DC002AAC95 /* ViewController.swift */; };
 		65B4BC2E200F44DC002AAC95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B4BC2C200F44DC002AAC95 /* Main.storyboard */; };
@@ -56,6 +60,10 @@
 		657A61272010A012001E5E4B /* ThirdTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTabViewController.swift; sourceTree = "<group>"; };
 		657A612920119F8F001E5E4B /* demoPlist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = demoPlist.plist; sourceTree = "<group>"; };
 		657A612B2011C2FE001E5E4B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		657A612E2011C9C7001E5E4B /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
+		657A616D2011CEF1001E5E4B /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		657A616E2011CEF1001E5E4B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		657A61712011D9C8001E5E4B /* SingletonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonClass.swift; sourceTree = "<group>"; };
 		65B4BC25200F44DC002AAC95 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B4BC28200F44DC002AAC95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B4BC2A200F44DC002AAC95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +156,10 @@
 				65B4BC64200F4672002AAC95 /* MyLable.swift */,
 				657A612920119F8F001E5E4B /* demoPlist.plist */,
 				657A612B2011C2FE001E5E4B /* UserModel.swift */,
+				657A616D2011CEF1001E5E4B /* User+CoreDataClass.swift */,
+				657A616E2011CEF1001E5E4B /* User+CoreDataProperties.swift */,
+				657A612D2011C9C7001E5E4B /* Example.xcdatamodeld */,
+				657A61712011D9C8001E5E4B /* SingletonClass.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -310,11 +322,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				65B4BC57200F4537002AAC95 /* PageControlViewController.swift in Sources */,
+				657A612F2011C9C7001E5E4B /* Example.xcdatamodeld in Sources */,
 				657A61282010A012001E5E4B /* ThirdTabViewController.swift in Sources */,
 				65B4BC2B200F44DC002AAC95 /* ViewController.swift in Sources */,
 				65B4BC5B200F4584002AAC95 /* SecondPageSubViewController.swift in Sources */,
 				65B4BC5F200F45D0002AAC95 /* SecondTabViewController.swift in Sources */,
+				657A616F2011CEF1001E5E4B /* User+CoreDataClass.swift in Sources */,
 				65B4BC5D200F45AE002AAC95 /* FirstTabViewController.swift in Sources */,
+				657A61722011D9C8001E5E4B /* SingletonClass.swift in Sources */,
+				657A61702011CEF1001E5E4B /* User+CoreDataProperties.swift in Sources */,
 				65B4BC61200F4600002AAC95 /* NavigationFirstViewController.swift in Sources */,
 				65B4BC59200F455D002AAC95 /* FirstPageSubViewController.swift in Sources */,
 				65B4BC29200F44DC002AAC95 /* AppDelegate.swift in Sources */,
@@ -489,7 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2AY5695V3;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sliu.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,7 +521,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2AY5695V3;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sliu.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -620,6 +636,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		657A612D2011C9C7001E5E4B /* Example.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				657A612E2011C9C7001E5E4B /* Example.xcdatamodel */,
+			);
+			currentVersion = 657A612E2011C9C7001E5E4B /* Example.xcdatamodel */;
+			path = Example.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 65B4BC1D200F44DC002AAC95 /* Project object */;
 }
