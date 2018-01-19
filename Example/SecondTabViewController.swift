@@ -33,7 +33,7 @@ class SecondTabViewController: UIViewController {
 //        systemSound()
 //        audio()
 //        backgroundPlayer()
-        mvPlayer2()
+//        mvPlayer2()
         
     }
     
